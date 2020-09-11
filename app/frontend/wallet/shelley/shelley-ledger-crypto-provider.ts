@@ -1,7 +1,7 @@
 import LedgerTransportU2F from '@ledgerhq/hw-transport-u2f'
 import LedgerTransportWebusb from '@ledgerhq/hw-transport-webusb'
 import Ledger from '@cardano-foundation/ledgerjs-hw-app-cardano'
-import {encode} from 'borc'
+import {encode} from 'borc' // TODO: use cbor.encode instead
 import CachedDeriveXpubFactory from '../helpers/CachedDeriveXpubFactory'
 import debugLog from '../../helpers/debugLog'
 import {
@@ -11,8 +11,6 @@ import {
 } from './shelley-transaction'
 import * as platform from 'platform'
 import {hasMinimalVersion} from './helpers/version-check'
-
-// import {PROTOCOL_MAGIC_KEY} from '../constants'
 
 import {
   bechAddressToHex,
